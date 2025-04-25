@@ -48,13 +48,24 @@
             this.txtCounting = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabCalc = new System.Windows.Forms.TabPage();
+            this.tabCurrency = new System.Windows.Forms.TabPage();
+            this.btnChange = new System.Windows.Forms.Button();
+            this.comboChanger = new System.Windows.Forms.ComboBox();
+            this.comboChangeTo = new System.Windows.Forms.ComboBox();
+            this.txtChanged = new System.Windows.Forms.TextBox();
+            this.txtChanger = new System.Windows.Forms.TextBox();
+            this.tabControl1.SuspendLayout();
+            this.tabCalc.SuspendLayout();
+            this.tabCurrency.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnEight
             // 
             this.btnEight.BackColor = System.Drawing.Color.Gray;
             this.btnEight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEight.Location = new System.Drawing.Point(162, 263);
+            this.btnEight.Location = new System.Drawing.Point(173, 228);
             this.btnEight.Name = "btnEight";
             this.btnEight.Size = new System.Drawing.Size(76, 58);
             this.btnEight.TabIndex = 0;
@@ -66,7 +77,7 @@
             // 
             this.btnSeven.BackColor = System.Drawing.Color.Gray;
             this.btnSeven.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeven.Location = new System.Drawing.Point(80, 263);
+            this.btnSeven.Location = new System.Drawing.Point(91, 228);
             this.btnSeven.Name = "btnSeven";
             this.btnSeven.Size = new System.Drawing.Size(76, 58);
             this.btnSeven.TabIndex = 0;
@@ -78,7 +89,7 @@
             // 
             this.btnNine.BackColor = System.Drawing.Color.Gray;
             this.btnNine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNine.Location = new System.Drawing.Point(244, 263);
+            this.btnNine.Location = new System.Drawing.Point(254, 228);
             this.btnNine.Name = "btnNine";
             this.btnNine.Size = new System.Drawing.Size(76, 58);
             this.btnNine.TabIndex = 1;
@@ -90,7 +101,7 @@
             // 
             this.btnSix.BackColor = System.Drawing.Color.Gray;
             this.btnSix.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSix.Location = new System.Drawing.Point(244, 327);
+            this.btnSix.Location = new System.Drawing.Point(254, 292);
             this.btnSix.Name = "btnSix";
             this.btnSix.Size = new System.Drawing.Size(76, 58);
             this.btnSix.TabIndex = 4;
@@ -102,7 +113,7 @@
             // 
             this.btnFour.BackColor = System.Drawing.Color.Gray;
             this.btnFour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFour.Location = new System.Drawing.Point(80, 327);
+            this.btnFour.Location = new System.Drawing.Point(91, 292);
             this.btnFour.Name = "btnFour";
             this.btnFour.Size = new System.Drawing.Size(76, 58);
             this.btnFour.TabIndex = 2;
@@ -114,7 +125,7 @@
             // 
             this.btnFive.BackColor = System.Drawing.Color.Gray;
             this.btnFive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFive.Location = new System.Drawing.Point(162, 327);
+            this.btnFive.Location = new System.Drawing.Point(173, 292);
             this.btnFive.Name = "btnFive";
             this.btnFive.Size = new System.Drawing.Size(76, 58);
             this.btnFive.TabIndex = 3;
@@ -126,7 +137,7 @@
             // 
             this.btnOne.BackColor = System.Drawing.Color.Gray;
             this.btnOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOne.Location = new System.Drawing.Point(244, 391);
+            this.btnOne.Location = new System.Drawing.Point(254, 356);
             this.btnOne.Name = "btnOne";
             this.btnOne.Size = new System.Drawing.Size(76, 58);
             this.btnOne.TabIndex = 7;
@@ -138,7 +149,7 @@
             // 
             this.btnThree.BackColor = System.Drawing.Color.Gray;
             this.btnThree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThree.Location = new System.Drawing.Point(80, 391);
+            this.btnThree.Location = new System.Drawing.Point(91, 356);
             this.btnThree.Name = "btnThree";
             this.btnThree.Size = new System.Drawing.Size(76, 58);
             this.btnThree.TabIndex = 5;
@@ -150,7 +161,7 @@
             // 
             this.btnTwo.BackColor = System.Drawing.Color.Gray;
             this.btnTwo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTwo.Location = new System.Drawing.Point(162, 391);
+            this.btnTwo.Location = new System.Drawing.Point(173, 356);
             this.btnTwo.Name = "btnTwo";
             this.btnTwo.Size = new System.Drawing.Size(76, 58);
             this.btnTwo.TabIndex = 6;
@@ -163,7 +174,7 @@
             this.btnComma.BackColor = System.Drawing.Color.Gray;
             this.btnComma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnComma.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComma.Location = new System.Drawing.Point(244, 455);
+            this.btnComma.Location = new System.Drawing.Point(254, 420);
             this.btnComma.Name = "btnComma";
             this.btnComma.Size = new System.Drawing.Size(76, 58);
             this.btnComma.TabIndex = 10;
@@ -176,7 +187,7 @@
             this.btnSwitch.BackColor = System.Drawing.Color.Gray;
             this.btnSwitch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSwitch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSwitch.Location = new System.Drawing.Point(80, 455);
+            this.btnSwitch.Location = new System.Drawing.Point(91, 420);
             this.btnSwitch.Name = "btnSwitch";
             this.btnSwitch.Size = new System.Drawing.Size(76, 58);
             this.btnSwitch.TabIndex = 8;
@@ -188,7 +199,7 @@
             // 
             this.btnZero.BackColor = System.Drawing.Color.Gray;
             this.btnZero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnZero.Location = new System.Drawing.Point(162, 455);
+            this.btnZero.Location = new System.Drawing.Point(173, 420);
             this.btnZero.Name = "btnZero";
             this.btnZero.Size = new System.Drawing.Size(76, 58);
             this.btnZero.TabIndex = 9;
@@ -199,7 +210,7 @@
             // 
             this.btnPlus.BackColor = System.Drawing.Color.Gray;
             this.btnPlus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlus.Location = new System.Drawing.Point(325, 456);
+            this.btnPlus.Location = new System.Drawing.Point(335, 421);
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Size = new System.Drawing.Size(76, 58);
             this.btnPlus.TabIndex = 11;
@@ -211,7 +222,7 @@
             // 
             this.bntMinus.BackColor = System.Drawing.Color.Gray;
             this.bntMinus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntMinus.Location = new System.Drawing.Point(326, 391);
+            this.bntMinus.Location = new System.Drawing.Point(336, 356);
             this.bntMinus.Name = "bntMinus";
             this.bntMinus.Size = new System.Drawing.Size(76, 58);
             this.bntMinus.TabIndex = 13;
@@ -223,7 +234,7 @@
             // 
             this.btnMultiply.BackColor = System.Drawing.Color.Gray;
             this.btnMultiply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMultiply.Location = new System.Drawing.Point(326, 327);
+            this.btnMultiply.Location = new System.Drawing.Point(336, 292);
             this.btnMultiply.Name = "btnMultiply";
             this.btnMultiply.Size = new System.Drawing.Size(76, 58);
             this.btnMultiply.TabIndex = 14;
@@ -235,7 +246,7 @@
             // 
             this.btnDivide.BackColor = System.Drawing.Color.Gray;
             this.btnDivide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDivide.Location = new System.Drawing.Point(325, 263);
+            this.btnDivide.Location = new System.Drawing.Point(335, 228);
             this.btnDivide.Name = "btnDivide";
             this.btnDivide.Size = new System.Drawing.Size(76, 58);
             this.btnDivide.TabIndex = 15;
@@ -247,7 +258,7 @@
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Gray;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Location = new System.Drawing.Point(326, 199);
+            this.btnDelete.Location = new System.Drawing.Point(336, 164);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(76, 58);
             this.btnDelete.TabIndex = 16;
@@ -260,8 +271,8 @@
             this.txtCounting.BackColor = System.Drawing.Color.Gray;
             this.txtCounting.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCounting.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCounting.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCounting.Location = new System.Drawing.Point(6, 124);
+            this.txtCounting.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCounting.Location = new System.Drawing.Point(17, 128);
             this.txtCounting.Multiline = true;
             this.txtCounting.Name = "txtCounting";
             this.txtCounting.Size = new System.Drawing.Size(395, 30);
@@ -272,7 +283,7 @@
             this.button1.BackColor = System.Drawing.Color.Gray;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(4, 455);
+            this.button1.Location = new System.Drawing.Point(15, 420);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(70, 58);
             this.button1.TabIndex = 18;
@@ -283,43 +294,135 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Location = new System.Drawing.Point(14, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(169, 13);
             this.label1.TabIndex = 19;
             this.label1.Text = "https://github.com/Maurisio12345";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabCalc);
+            this.tabControl1.Controls.Add(this.tabCurrency);
+            this.tabControl1.Location = new System.Drawing.Point(0, 3);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.RightToLeftLayout = true;
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(458, 530);
+            this.tabControl1.TabIndex = 20;
+            // 
+            // tabCalc
+            // 
+            this.tabCalc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tabCalc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.tabCalc.Controls.Add(this.btnFive);
+            this.tabCalc.Controls.Add(this.label1);
+            this.tabCalc.Controls.Add(this.btnEight);
+            this.tabCalc.Controls.Add(this.txtCounting);
+            this.tabCalc.Controls.Add(this.button1);
+            this.tabCalc.Controls.Add(this.btnSeven);
+            this.tabCalc.Controls.Add(this.btnNine);
+            this.tabCalc.Controls.Add(this.btnDelete);
+            this.tabCalc.Controls.Add(this.btnFour);
+            this.tabCalc.Controls.Add(this.btnDivide);
+            this.tabCalc.Controls.Add(this.btnSix);
+            this.tabCalc.Controls.Add(this.btnMultiply);
+            this.tabCalc.Controls.Add(this.btnTwo);
+            this.tabCalc.Controls.Add(this.bntMinus);
+            this.tabCalc.Controls.Add(this.btnThree);
+            this.tabCalc.Controls.Add(this.btnPlus);
+            this.tabCalc.Controls.Add(this.btnOne);
+            this.tabCalc.Controls.Add(this.btnComma);
+            this.tabCalc.Controls.Add(this.btnZero);
+            this.tabCalc.Controls.Add(this.btnSwitch);
+            this.tabCalc.Location = new System.Drawing.Point(4, 22);
+            this.tabCalc.Name = "tabCalc";
+            this.tabCalc.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCalc.Size = new System.Drawing.Size(450, 504);
+            this.tabCalc.TabIndex = 0;
+            this.tabCalc.Text = "Calculator";
+            // 
+            // tabCurrency
+            // 
+            this.tabCurrency.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tabCurrency.Controls.Add(this.btnChange);
+            this.tabCurrency.Controls.Add(this.comboChanger);
+            this.tabCurrency.Controls.Add(this.comboChangeTo);
+            this.tabCurrency.Controls.Add(this.txtChanged);
+            this.tabCurrency.Controls.Add(this.txtChanger);
+            this.tabCurrency.Location = new System.Drawing.Point(4, 22);
+            this.tabCurrency.Name = "tabCurrency";
+            this.tabCurrency.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCurrency.Size = new System.Drawing.Size(450, 504);
+            this.tabCurrency.TabIndex = 1;
+            this.tabCurrency.Text = "Currency Changer";
+            // 
+            // btnChange
+            // 
+            this.btnChange.BackColor = System.Drawing.Color.Gray;
+            this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChange.Location = new System.Drawing.Point(167, 213);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(86, 54);
+            this.btnChange.TabIndex = 5;
+            this.btnChange.Text = "Change";
+            this.btnChange.UseVisualStyleBackColor = false;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
+            // 
+            // comboChanger
+            // 
+            this.comboChanger.FormattingEnabled = true;
+            this.comboChanger.Location = new System.Drawing.Point(8, 161);
+            this.comboChanger.Name = "comboChanger";
+            this.comboChanger.Size = new System.Drawing.Size(121, 21);
+            this.comboChanger.TabIndex = 4;
+            // 
+            // comboChangeTo
+            // 
+            this.comboChangeTo.FormattingEnabled = true;
+            this.comboChangeTo.Location = new System.Drawing.Point(8, 93);
+            this.comboChangeTo.Name = "comboChangeTo";
+            this.comboChangeTo.Size = new System.Drawing.Size(121, 21);
+            this.comboChangeTo.TabIndex = 3;
+            // 
+            // txtChanged
+            // 
+            this.txtChanged.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtChanged.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtChanged.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChanged.Location = new System.Drawing.Point(133, 93);
+            this.txtChanged.Multiline = true;
+            this.txtChanged.Name = "txtChanged";
+            this.txtChanged.Size = new System.Drawing.Size(169, 32);
+            this.txtChanged.TabIndex = 1;
+            // 
+            // txtChanger
+            // 
+            this.txtChanger.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtChanger.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtChanger.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChanger.Location = new System.Drawing.Point(133, 161);
+            this.txtChanger.Multiline = true;
+            this.txtChanger.Name = "txtChanger";
+            this.txtChanger.Size = new System.Drawing.Size(169, 32);
+            this.txtChanger.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(408, 526);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtCounting);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnDivide);
-            this.Controls.Add(this.btnMultiply);
-            this.Controls.Add(this.bntMinus);
-            this.Controls.Add(this.btnPlus);
-            this.Controls.Add(this.btnComma);
-            this.Controls.Add(this.btnSwitch);
-            this.Controls.Add(this.btnZero);
-            this.Controls.Add(this.btnOne);
-            this.Controls.Add(this.btnThree);
-            this.Controls.Add(this.btnTwo);
-            this.Controls.Add(this.btnSix);
-            this.Controls.Add(this.btnFour);
-            this.Controls.Add(this.btnFive);
-            this.Controls.Add(this.btnNine);
-            this.Controls.Add(this.btnSeven);
-            this.Controls.Add(this.btnEight);
+            this.ClientSize = new System.Drawing.Size(458, 536);
+            this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.Text = "Laskin";
+            this.tabControl1.ResumeLayout(false);
+            this.tabCalc.ResumeLayout(false);
+            this.tabCalc.PerformLayout();
+            this.tabCurrency.ResumeLayout(false);
+            this.tabCurrency.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -345,6 +448,14 @@
         private System.Windows.Forms.Button btnOne;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabCalc;
+        private System.Windows.Forms.TabPage tabCurrency;
+        private System.Windows.Forms.TextBox txtChanged;
+        private System.Windows.Forms.TextBox txtChanger;
+        private System.Windows.Forms.ComboBox comboChanger;
+        private System.Windows.Forms.ComboBox comboChangeTo;
+        private System.Windows.Forms.Button btnChange;
     }
 }
 

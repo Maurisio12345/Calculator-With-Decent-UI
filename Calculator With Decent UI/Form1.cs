@@ -4,9 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using Newtonsoft.Json.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Calculator_With_Decent_UI
 {
@@ -19,9 +23,18 @@ namespace Calculator_With_Decent_UI
         // variables for minus and etc...
         public string minus, plus, divide, multiplym, comma;
 
+        // now we start here the currency changer first we make an array of currencies
+
+        string[] currencies = { "EUR", "USD", "GBP", "JPY", "CHF", "AUD", "CAD", "SEK", "NOK", "DKK", "PLN", "MXN", "CZK", "HUF", "TRY", "ZAR", "HKD", "SGD", "BRL", "INR", "KRW", "CNY" };
+
         public Form1()
         {
             InitializeComponent();
+            comboChanger.Items.AddRange(currencies);
+            comboChangeTo.Items.AddRange(currencies);
+            comboChanger.SelectedIndex = 0;
+            comboChangeTo.SelectedIndex = 0;
+
         }
         #region cool stuff
         private void button1_Click(object sender, EventArgs e)
@@ -84,6 +97,48 @@ namespace Calculator_With_Decent_UI
             else // simple logic of adding the - idk why i even comment here
                 txtCounting.Text = "-" + txtCounting.Text;
         }
+
+        private async void btnChange_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // we check if the number is bigger than 0 if yes we dont stay here if its not we return
+                if (!decimal.TryParse(txtChanger.Text, out decimal amount) || amount <= 0)
+                    return;
+
+                string selectedCurrency = comboChanger.SelectedItem.ToString();
+                string selectedChange = comboChangeTo.SelectedItem.ToString();
+
+                decimal convertedAmount = await ConvertCurrency(amount, selectedCurrency, selectedChange);
+                // here we show case our new currency
+                txtChanged.Text = convertedAmount.ToString("0.00");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        static async Task<decimal> ConvertCurrency(decimal amount, string from, string to)
+        {
+         
+            // here we get our currency data from api frankfurter.app
+            using (HttpClient client = new HttpClient())
+            {
+                string url = $"https://api.frankfurter.app/latest?amount={amount}&from={from}&to={to}";
+                var response = await client.GetStringAsync(url);
+
+                JObject data = JObject.Parse(response);
+                decimal result = (decimal)data["rates"][to];
+
+                return result;
+
+            }
+        }
+
+
 
         private void btnSeven_Click(object sender, EventArgs e)
         {
