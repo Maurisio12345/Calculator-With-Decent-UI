@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -21,12 +22,21 @@ namespace Calculator_With_Decent_UI
         // boolean for delete button things
         bool is_pressed = false;
         // variables for minus and etc...
-        public string minus, plus, divide, multiplym, comma;
+        public string minus, plus, divide, multiply, comma;
+
+        int checkervalue123 = 0;
+
+        int height, width, side, answer, filter;
+
+        double radius, answerous;
 
         // now we start here the currency changer first we make an array of currencies
 
         string[] currencies = { "EUR", "USD", "GBP", "JPY", "CHF", "AUD", "CAD", "SEK", "NOK", "DKK", "PLN", "MXN", "CZK", "HUF", "TRY", "ZAR", "HKD", "SGD", "BRL", "INR", "KRW", "CNY" };
-
+        // here we do an array of shapes we want to use in our calculator..
+        string[] shapes = { "Square", "Rectangle", "Triangle", "Circle"};
+        //  adding later
+        //  "Cube", "Cuboid", "Sphere", "Cylinder", "Cone", "Pyramid" 
         public Form1()
         {
             InitializeComponent();
@@ -34,6 +44,11 @@ namespace Calculator_With_Decent_UI
             comboChangeTo.Items.AddRange(currencies);
             comboChanger.SelectedIndex = 0;
             comboChangeTo.SelectedIndex = 0;
+            comboShape.Items.AddRange(shapes);
+            comboShape.SelectedIndex = -1;
+
+            Thread countingThread = new Thread(ThreadedCountingShapes);
+            countingThread.Start();
 
         }
         #region cool stuff
@@ -53,10 +68,7 @@ namespace Calculator_With_Decent_UI
                 // making this so clearing and deleting will be whole lot of not so painful
                 is_pressed = true;
 
-                /*
-                 havent yet included all buttons because im lazy but now when i start doing it let me leave this message here for future me hopefully u create better code than this in future :D:D:D
-                 even tho this aint my worst but its not the best either 
-                 */
+              
                 
             }
             catch(Exception ex) // here we catch the error
@@ -138,6 +150,130 @@ namespace Calculator_With_Decent_UI
             }
         }
 
+        private void btnShape_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comboShape.SelectedIndex == 0)
+                {
+                    ThreadedCountingShapes();
+                }
+                if (comboShape.SelectedIndex == 1)
+                {
+                    ThreadedCountingShapes();
+                }
+                if (comboShape.SelectedIndex == 2)
+                {
+                    ThreadedCountingShapes();
+                }
+                if (comboShape.SelectedIndex == 3)
+                {
+                    ThreadedCountingShapes();
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        public void ThreadedCountingShapes()
+        {// wanted to experiment threading so this feature will be seperate thread now...
+           
+
+            try // catch an error but we aint here playin around bro
+            {
+                side = int.Parse(txtAnswer.Text);
+                if (comboShape.SelectedIndex == 0)
+                {// square //
+                    // counting the area size by multiply
+                    answer = side * side;
+                    // here we show our answer in txtbox
+                    txtAnswer.Text = answer.ToString();
+                }
+                else if (comboShape.SelectedIndex == 1)
+                {// rectangle //
+                    // goes height x width
+
+                    if (int.TryParse(txtAnswer.Text, out int number))
+                    {
+                        if (checkervalue123 == 0)
+                        {
+                            // here we save the value of the number to the variable Height 
+                            // also we add 1 to checkervalue to give the greenlight to switch to the width inserting and counting finaly the answer
+                            height = number;
+                            checkervalue123 = 1;
+                            txtAnswer.Clear();
+                            MessageBox.Show("Height saved now insert a width!");
+
+                        }
+                        else if (checkervalue123 == 1)
+                        {// we execute this part when the checker value is 1
+                            // here we do the same thing we did with height
+                            // and we remove one from checkervalue to count new stuff
+                            // we also print the stuff to the answer box :)))
+                            width = number;
+                            answer = height * width;
+                            checkervalue123 = 0;
+                            txtAnswer.Text = answer.ToString();
+                        }
+                    }
+
+
+
+
+                }
+                else if (comboShape.SelectedIndex == 2)
+                {
+                    if (int.TryParse(txtAnswer.Text, out int number))
+                    {//triangle
+
+                        if (checkervalue123 == 0)
+                        {
+                            // here we do the get the values in the number integer
+                            width = number;
+                            checkervalue123 = 1;
+                            txtAnswer.Clear();
+                            MessageBox.Show("Width saved now insert the Height!");
+                        }
+                        else if (checkervalue123 == 1)
+                        {// here we do the actual counting but first we need to get the last value / height
+                            // then we count so height x width divided by 2 is the answer
+                            // the we print it to the txtAnswer
+                            // simple and good :)))
+                            height = number;
+                            checkervalue123 = 0;
+                            filter = width * height;
+                            answer = filter / 2;
+                            txtAnswer.Text = answer.ToString();
+                        }
+                    }
+                }
+                else if (comboShape.SelectedIndex == 3) // circle
+                {
+                    if (double.TryParse(txtAnswer.Text, out double number))
+                    {// circle // u count it by radius x radius x PI
+                        radius = number;
+                        // writing a first step of counting the area size
+                        answerous = radius * radius;
+                        // here we count the rest of the area size
+                        double answer = answerous * Math.PI;
+                        // here we again show the answer
+                        txtAnswer.Text = answer.ToString();
+                    }
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                //nothing here 
+                return;
+            }
+
+        }
 
 
         private void btnSeven_Click(object sender, EventArgs e)
@@ -216,7 +352,7 @@ namespace Calculator_With_Decent_UI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (is_pressed)
+            if (is_pressed) // checker value
             {
                 // lets set the value back to false so it will reset
                 is_pressed = false;
@@ -228,7 +364,7 @@ namespace Calculator_With_Decent_UI
                     txtCounting.Text = txtCounting.Text.Substring(0, txtCounting.Text.Length - 1);
             }
         }
-
+        // take a wild guess
         private void btnComma_Click(object sender, EventArgs e)
         {
             comma = ",";
