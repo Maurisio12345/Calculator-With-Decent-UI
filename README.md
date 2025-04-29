@@ -7,3 +7,4 @@ if ur reading this i just want to tell u to check the code its very much able to
 - made the Clear button so if u have already counted ur stuff u just hit it once all goes away but if u messup    mid writing u can click the numbers off one by one
 - + Added an currency changer.
 - next i might add an feature to count diffrend stuff like triangles and such and also might work more on the UI to make it more cleaner
+- + Area size calculator that counts areas of diffrend shapes!
